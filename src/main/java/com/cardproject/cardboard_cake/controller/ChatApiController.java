@@ -1,4 +1,4 @@
-package com.cardproject.cardboard_cake;
+package com.cardproject.cardboard_cake.controller;
 
 import java.util.Map;
 
@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.cardproject.cardboard_cake.service.ChatLogService;
 
 @RestController
 @RequestMapping("/api/chat")
@@ -21,8 +23,8 @@ public class ChatApiController {
     public Map<String, String> chat(@RequestBody Map<String, String> payload) {
         String userMessage = payload.get("message");
         String botReply = getReply(userMessage);
-        chatLogService.log("You: " + userMessage);
-        chatLogService.log("Bot: " + botReply);
+        chatLogService.log("user", userMessage);
+        chatLogService.log("bot", botReply);
 
         return Map.of("reply", botReply);
     }

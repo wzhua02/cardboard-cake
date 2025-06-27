@@ -1,4 +1,4 @@
-package com.cardproject.cardboard_cake;
+package com.cardproject.cardboard_cake.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
