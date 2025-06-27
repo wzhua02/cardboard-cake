@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ChatLogService {
-    private final Path logPath = Paths.get("chatlogs.txt");
+    private final Path logPath = Paths.get("logs/chatlogs.txt");
 
     public void log(String entry) {
         try (PrintWriter out = new PrintWriter(new FileWriter("chatlogs.txt", true))) {
